@@ -1,0 +1,29 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.76.2"
+  },
+  "ReportID": "01a1e56b-caae-70b7-92da-3c36704b97c6",
+  "CreatedAt": "2026-11-16T18:33:29.134047+01:00",
+  "ArtifactID": "sha256:6688390838a773352e4f952eea6a1e0afe1cb19e827ee6a04f5bd3062f76315d",
+  "ArtifactName": ".",
+  "ArtifactType": "repository",
+  "Metadata": {
+    "Branch": "master",
+    "Commit": "96322f3b72237b851cb662b4ef4133c98de39911",
+    "CommitMsg": "Dockerfile corrigé, rapport Trivy après correction",
+    "Author": "hibaelkourd \u003ch.elkourd5841@uca.ac.ma\u003e",
+    "Committer": "hibaelkourd \u003ch.elkourd5841@uca.ac.ma\u003e"
+  },
+  "Results": [
+    {
+      "Target": "Dockerfile",
+      "Class": "config",
+      "Type": "dockerfile",
+      "MisconfSummary": {
+        "Successes": 27,
+        "Failures": 0
+      }
+    }
+  ]
+}
