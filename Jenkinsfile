@@ -12,12 +12,10 @@ pipeline {
             }
         }
 
-        stage('Tests') {
-            steps {
-                sh '''
-                    docker run --rm -v "$PWD":/src -w /src python:3.12-slim \
-                      sh -c "pip install --no-cache-dir -r requirements.txt pytest && python -m pytest tests"
-                '''
+         stage('Tests') {
+             steps {
+                 sh 'docker build -f Dockerfile.test -t $IMAGE_NAME-tests:$BUILD_NUMBER .'
+                 sh 'docker run --rm $IMAGE_NAME-tests:$BUILD_NUMBER'
             }
         }
 
