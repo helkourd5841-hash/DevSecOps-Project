@@ -35,8 +35,8 @@ pipeline {
 
         stage('Scan image (Trivy)') {
             steps {
-                sh 'trivy image --severity HIGH,CRITICAL --ignore-unfixed --format json --output reports/trivy-image.json $IMAGE_NAME:$BUILD_NUMBER'
-                sh 'trivy image --severity HIGH,CRITICAL --ignore-unfixed --exit-code 1 $IMAGE_NAME:$BUILD_NUMBER'
+                sh 'trivy image --severity HIGH,CRITICAL --ignore-unfixed --ignorefile .trivyignore --format json --output reports/trivy-image.json $IMAGE_NAME:$BUILD_NUMBER'
+                sh 'trivy image --severity HIGH,CRITICAL --ignore-unfixed --ignorefile .trivyignore --exit-code 1 $IMAGE_NAME:$BUILD_NUMBER'
             }
         }
     }
