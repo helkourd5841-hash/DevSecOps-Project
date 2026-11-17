@@ -1,0 +1,3 @@
+# zlib1g: correctif deb13u1 non applicable le 2026-11-17 (debian-security: signature "Not live until" dans le futur)
+# A RETIRER des que apt-get upgrade met zlib1g a jour
+CVE-2026-85091
