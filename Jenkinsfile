@@ -21,7 +21,7 @@ pipeline {
 
         stage('Build image') {
             steps {
-                sh 'docker build -t $IMAGE_NAME:$BUILD_NUMBER .'
+                sh 'docker build --no-cache --pull -t $IMAGE_NAME:$BUILD_NUMBER .'
             }
         }
 
